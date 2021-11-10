@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart bot</title>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      header {
+        background-color: rgb(110, 106, 106);
+        height: 90px;
+        margin: 0px;
+      }
+      .left {
+        display: inline-block;
+        /* border: 2px dotted red;*/
+        position: absolute;
+      }
+      .left img {
+        width: 70px;
+        height: 70px;
+        margin-top: 0px;
+        margin-left: 20px;
+      }
+      .right {
+        position: absolute;
+        right: 60px;
+        top: 30px;
+        display: inline-block;
+        border: 2px dotted rgb(44, 32, 34);
+      }
+      /* .btn{
+        margin-left: 15px;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: blue;
+        border-radius: 13px;
+        transition-property: backgroung-color;
+        transition-duration: 1000ms;
+        animation: shadow-pulse is infinite;
+      }
+      @keyframes{
+        0%{
+
+        }
+      }*/
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 13px 6px;
+        border-radius: 200px;
+        font-weight: bold;
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+        margin-top: 10px;
+        font-size: 20px;
+        margin-left: 200px;
+      }
+      .btn {
+        background: white;
+        color: orange;
+        border: 2px solid transparent;
+      }
+      .pulsate {
+        animation: pulsate 3s ease-in-out;
+        animation-iteration-count: infinite;
+        opacity: 0.3;
+        color: black;
+      }
+      .navigation {
+        display: block;
+        width: 40%;
+        margin: 0px auto;
+        margin-top: 0px;
+        /*  border: 2px double blue;*/
+        overflow: hidden;
+      }
+      .navigation li {
+        margin-top: 20px;
+        list-style-type: none;
+        float: left;
+      }
+      .navigation a {
+        padding: 30px;
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+        font-weight: bolder;
+        text-align: center;
+      }
+      a:hover {
+        background-color: grey;
+        color: black;
+      }
+      .center {
+        display: inline-block;
+        margin-top: 300px;
+        margin-left: 400px;
+        margin-bottom: 185px; /* margin: 300px 400px;9*/
+        color: white;
+        /*background-color: purple;*/
+      }
+      .center p {
+        color: black;
+      }
+      .btn1 {
+        margin-left: 200px;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: blue;
+        border-radius: 13px;
+        transition-property: backgroung-color;
+        transition-duration: 1000ms;
+      }
+
+      .heading {
+        font-size: 50px;
+        /* background-color: yellow;*/
+        text-align: center;
+      }
+      .section-book {
+        width: 100%;
+        height: 650px;
+        background-color: pink;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .box {
+        width: 1050px;
+        height: 500px;
+        margin: 20px;
+        background-color: white;
+      }
+      .box:hover {
+        box-shadow: grey 20px 30px 40px 10px;
+      }
+      #box-1 {
+        padding: 50px;
+        font-size: 25px;
+        background-color: rgb(214, 230, 235);
+      }
+      #box-1 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #box-1 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #box-1 > h4 {
+        padding-top: 50px;
+        text-align: end;
+      }
+      .type {
+        font-size: 25px;
+        width: 100%;
+        height: 100vh;
+        background-color: yellow;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .noun-box:hover {
+        box-shadow: grey 20px 30px 40px 10px;
+      }
+      .noun-box {
+        width: 1120px;
+        height: 726px;
+        margin: 30px;
+        padding: 20px;
+        background-color: white;
+      }
+      #nonu-box-1 {
+        font-size: 25px;
+        background-color: rgb(214, 230, 235);
+      }
+      #noun-box-1 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-1 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-2 {
+        font-size: 25px;
+      }
+      #noun-box-2 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-2 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-3 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-3 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-4 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-4 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-5 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-5 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-6 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-6 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-7 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-7 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-4 {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="left">
+        <a href="https://icons8.com/icon/ZYujt38OjL95/studying"
+          ><img src="https://img.icons8.com/color/96/000000/studying.png"
+        /></a>
+      </div>
+
+      <div class="navigation">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Topic </a></li>
+          <li><a href="#">About Us </a></li>
+          <li><a href="#">Contact us </a></li>
+        </ul>
+      </div>
+      <div class="right">
+        <button class="btn pulsate">Login</button>
+      </div>
+    </header>
+    <!--section is start-->
+    <div class="heading">English grammer</div>
+    <section class="section-book">
+      <div class="box" id="box-1">
+        <h2>Verb</h2>
+        <p>
+          A verb is a word or a combination of words that indicates action or a
+          state of being or condition. A verb is the part of a sentence that
+          tells us what the subject performs. Verbs are the hearts of English
+          sentences.
+        </p>
+        <h3>Type Of Verbs</h3>
+        <ol>
+          <li>Finite Verbs</li>
+          <li>Non-finite Verbs</li>
+          <li>Action Verbs</li>
+          <li>Linking Verb</li>
+          <li>Auxiliary Verbs</li>
+          <li>Modal Verbs</li>
+        </ol>
+      </div>
+    </section>
+    <!-- for nouns type section-->
+    <div class="type">
+      <div class="noun-box" id="noun-box-1">
+        <h2>Finite Verbs</h2>
+        <p>
+          Finite verbs are the actual verbs which are called the roots of
+          sentences. It is a form of a verb that is performed by or refers to a
+          subject and uses one of the twelve forms of tense and changes
+          according to the number/person of the subject.
+        </p>
+        <h3>Examples of Finite Verbs</h3>
+        <ul>
+          <li>
+            Alex <u>went</u> to school. (Subject – Alex – performed the action
+            in the past. This information is evident only by the verb ‘went’.)
+          </li>
+          <li>Robert <u>plays</u> hockey.</li>
+          <li>He is <u>playing</u> for Australia.</li>
+          <li>
+            He <u>is</u> one of the best players. (Here, the verb ‘is’ directly
+            refers to the subject itself.)
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-2">
+        <h2>Non-finite Verbs</h2>
+        <p>
+          Non-finite Verbs are not actual verbs. They do not work as verbs in
+          the sentence rather they work as nouns, adjectives, adverbs, etc.
+          Non-finite verbs do not change according to the number/person of the
+          subject because these verbs, also called verbals, do not have any
+          direct relation to the subject. Sometimes they become the subject
+          themselves.
+        </p>
+        <h3>Examples of Non-finite verbs</h3>
+        <ul>
+          <li>Alex went abroad <u>to play</u> (Infinitives)</li>
+          <li><u>Playing</u> cricket is his only job. (Present participle)</li>
+          <li>I have a <u>broken</u> bat. (Past participle)</li>
+          <li><u>Walking </u> is a good habit. (Gerund)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-3">
+        <h2>Action Verbs</h2>
+        <p>
+          Action verbs indicate what the subject of a sentence performs. Action
+          verbs can make the listener/reader feel emotions, see scenes more
+          vividly and accurately.
+        </p>
+        <h3>Examples of action verbs</h3>
+        <ul>
+          <li>Anthony is <b>throwing</b> the football.</li>
+          <li>She <b>accepted</b> the job offer.</li>
+          <li>He <b>thought</b> about his stupid mistake in the test.</li>
+          <li>John <b>visited</b> his friend for a while and then went home</li>
+          <li>The dog <b>ran</b> across the yard.</li>
+        </ul>
+        <h3>Type of Action Verbs</h3>
+        <ol>
+          <li>Transitive verbs</li>
+          <li>Intransitive verbs</li>
+        </ol>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-4">
+        <h2>Transitive verbs</h2>
+        <p>
+          Transitive verbs must have a direct object. A transitive verb demands
+          something/someone to be acted upon.
+        </p>
+        <h3>Examples of Transitive verbs</h3>
+        <ul>
+          <li>
+            I <u>painted</u> the car. (The verb ‘paint’ demands an object to be
+            painted)
+          </li>
+          <li>
+            She <u>is reading </u> the newspaper. (The verb ‘read’ asks the
+            question “what is she reading?” – the answer is the object)
+          </li>
+        </ul>
+        <h2>Intransitive verbs</h2>
+        <p>
+          Intransitive verbs do not act upon anything. They may be followed by
+          an adjective, adverb, preposition, or another part of speech.
+        </p>
+        <h3>Examples Of Intransitive verbs</h3>
+        <ul>
+          <li>
+            She <u>smiled</u> . (The verb ‘smile’ cannot have any object since
+            the action of ‘smiling’ does not fall upon anything/anyone)
+          </li>
+          <li>I <u>wake</u> up at 6 AM. (No object is needed for this verb)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-5">
+        <h2>Linking Verb</h2>
+        <p>
+          A linking verb adds details about the subject of a sentence. In its
+          simplest form, it connects the subject and the complement — that is,
+          the words that follow the linking verb. It creates a link between them
+          instead of showing action.
+        </p>
+        <p>
+          Generally, linking verbs are called ‘be’ verbs which are - am, is,
+          are, was, were. However, there are some other verbs which can work as
+          linking verbs
+        </p>
+        <p>
+          Those verbs are: Act, feel, remain, appear, become, seem, smell,
+          sound, grow, look, prove, stay, taste, turn.
+        </p>
+        <h3>Examples of Linking Verb</h3>
+        <ul>
+          <li>
+            She <b>appears</b> ready for the game. (She <b>is</b> ready for the
+            game.)
+          </li>
+          <li>
+            The food <b>seemed</b> delicious. (The food <b>was</b> delicious.)
+            You look happy. (You are happy.)
+          </li>
+          <li>You <b>look</b> happy. (You <b>are</b> happy.)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-6">
+        <h2>Auxiliary Verbs</h2>
+        <p>
+          Auxiliary verbs are also called helping verbs. An auxiliary verb
+          extends the main verb by helping to show time, tense, and possibility.
+          The auxiliary verbs are – be verbs, have, and do.
+        </p>
+        <p>
+          They are used in the continuous (progressive) and perfect
+          tenses.Linking verbs work as main verbs in the sentence, but auxiliary
+          verbs help main verbs.
+        </p>
+        <p>
+          Do is an auxiliary verb that is used to ask questions, to express
+          negation, to provide emphasis, and more.
+        </p>
+        <h3>Examples of Auxiliary Verbs</h3>
+        <ul>
+          <li>Alex <b>is</b> going to school.</li>
+          <li>They <b>are</b> walking in the park.</li>
+          <li>I <b>have</b> seen a movie.</li>
+          <li><b>Do</b> you drink tea?</li>
+          <li><b>Don’t</b> waste your time.</li>
+          <li>Please, <b>do</b> submit your assignments.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-7">
+        <h2>Modal Verbs</h2>
+        <p>
+          A modal verb is a kind of an auxiliary verb. It assists the main verb
+          to indicate possibility, potentiality, ability, permission,
+          expectation, and obligation.
+        </p>
+        <p>
+          The modal verbs are can, could, must, may, might, ought to, shall,
+          should, will, would.
+        </p>
+        <h3>Examples of Modal Verbs</h3>
+        <ul>
+          <li>I <b>may</b> want to talk to you again.</li>
+          <li>They <b>must </b> play their best game to win.</li>
+          <li>She <b>should</b> call him.</li>
+          <li>I <b>will</b> go there.</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

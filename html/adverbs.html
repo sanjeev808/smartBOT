@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart bot</title>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      header {
+        background-color: rgb(110, 106, 106);
+        height: 90px;
+        margin: 0px;
+      }
+      .left {
+        display: inline-block;
+        /* border: 2px dotted red;*/
+        position: absolute;
+      }
+      .left img {
+        width: 70px;
+        height: 70px;
+        margin-top: 0px;
+        margin-left: 20px;
+      }
+      .right {
+        position: absolute;
+        right: 60px;
+        top: 30px;
+        display: inline-block;
+        border: 2px dotted rgb(44, 32, 34);
+      }
+      /* .btn{
+        margin-left: 15px;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: blue;
+        border-radius: 13px;
+        transition-property: backgroung-color;
+        transition-duration: 1000ms;
+        animation: shadow-pulse is infinite;
+      }
+      @keyframes{
+        0%{
+
+        }
+      }*/
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 13px 6px;
+        border-radius: 200px;
+        font-weight: bold;
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+        margin-top: 10px;
+        font-size: 20px;
+        margin-left: 200px;
+      }
+      .btn {
+        background: white;
+        color: orange;
+        border: 2px solid transparent;
+      }
+      .pulsate {
+        animation: pulsate 3s ease-in-out;
+        animation-iteration-count: infinite;
+        opacity: 0.3;
+        color: black;
+      }
+      .navigation {
+        display: block;
+        width: 40%;
+        margin: 0px auto;
+        margin-top: 0px;
+        /*  border: 2px double blue;*/
+        overflow: hidden;
+      }
+      .navigation li {
+        margin-top: 20px;
+        list-style-type: none;
+        float: left;
+      }
+      .navigation a {
+        padding: 30px;
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+        font-weight: bolder;
+        text-align: center;
+      }
+      a:hover {
+        background-color: grey;
+        color: black;
+      }
+      .center {
+        display: inline-block;
+        margin-top: 300px;
+        margin-left: 400px;
+        margin-bottom: 185px; /* margin: 300px 400px;9*/
+        color: white;
+        /*background-color: purple;*/
+      }
+      .center p {
+        color: black;
+      }
+      .btn1 {
+        margin-left: 200px;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: blue;
+        border-radius: 13px;
+        transition-property: backgroung-color;
+        transition-duration: 1000ms;
+      }
+
+      .heading {
+        font-size: 50px;
+        /* background-color: yellow;*/
+        text-align: center;
+      }
+      .section-book {
+        width: 100%;
+        height: 650px;
+        /*background-color: pink;*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .box {
+        width: 1050px;
+        height: 500px;
+        margin: 20px;
+        background-color: white;
+      }
+      .box:hover {
+        box-shadow: grey 20px 30px 40px 10px;
+      }
+      #box-1 {
+        padding: 50px;
+        font-size: 25px;
+        background-color: rgb(214, 230, 235);
+      }
+      #box-1 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #box-1 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #box-1 > h4 {
+        padding-top: 50px;
+        text-align: end;
+      }
+      .type {
+        font-size: 25px;
+        width: 100%;
+        height: 100vh;
+        background-color: yellow;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .noun-box:hover {
+        box-shadow: grey 20px 30px 40px 10px;
+      }
+      .noun-box {
+        width: 1120px;
+        height: 726px;
+        margin: 30px;
+        padding: 20px;
+        background-color: white;
+      }
+      #nonu-box-1 {
+        font-size: 25px;
+        background-color: rgb(214, 230, 235);
+      }
+      #noun-box-1 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-1 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-2 {
+        font-size: 25px;
+      }
+      #noun-box-2 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-2 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-3 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-3 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-4 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-4 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-5 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-5 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-6 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-6 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-7 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-7 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-4 {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="left">
+        <a href="https://icons8.com/icon/ZYujt38OjL95/studying"
+          ><img src="https://img.icons8.com/color/96/000000/studying.png"
+        /></a>
+      </div>
+
+      <div class="navigation">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Topic </a></li>
+          <li><a href="#">About Us </a></li>
+          <li><a href="#">Contact us </a></li>
+        </ul>
+      </div>
+      <div class="right">
+        <button class="btn pulsate">Login</button>
+      </div>
+    </header>
+    <!--section is start-->
+    <div class="heading">English grammer</div>
+    <section class="section-book">
+      <div class="box" id="box-1">
+        <h2>Adverb</h2>
+        <p>
+          An adverb is a word/a set of words that modifies verbs, adjectives,
+          and other adverbs. It tells when, where, and how an action is
+          performed or indicates the quality or degree of the action.
+        </p>
+        <h3>Type of Advarbs</h3>
+        <ol>
+          <li>Conjunctive Adverbs</li>
+          <li>Sentence Adverbs</li>
+          <li>Adverbs of Time/Frequency</li>
+          <li>Adverbs of Place/Direction</li>
+          <li>Adverbs of Degree</li>
+          <li>Adverbs of Manner</li>
+        </ol>
+      </div>
+    </section>
+    <!-- for nouns type section-->
+    <div class="type">
+      <div class="noun-box" id="noun-box-1">
+        <h2>Conjunctive Adverbs</h2>
+        <p>
+          A <b>conjunctive adverb</b> connects phrases or independent clauses.
+          It provides transitions between ideas and shows relationships.
+        </p>
+        <p>
+          Conjunctive adverbs are also called <i><b>connectors</b></i> .
+        </p>
+        <h3>Examples of Conjunctive Adverbs</h3>
+        <ul>
+          <li>
+            It rained last night. <b><u>Nonetheless</u></b
+            >, the final match has not been canceled.
+          </li>
+          <li>
+            We are still confused, <b><u>however</u></b
+            >, if the umpires will come.
+          </li>
+          <li>
+            Last season there was a great drought; <b><u>consequently</u></b
+            >, we could not grow crops.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-1">
+        <h2>Sentence Adverbs</h2>
+        <p>
+          A sentence adverb starts the sentence and modifies the whole sentence
+        </p>
+        <h3>Examples of Sentence Adverbs</h3>
+        <ul>
+          <li><b>Hopefully</b>, we will win the match.</li>
+          <li><b>Apparently</b>, the sky is getting cloudy.</li>
+          <li><b>Certainly</b> , I did not think of coming here.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-1">
+        <h2>Adverbs of Time/Frequency (When?)</h2>
+        <p>
+          <b> Adverbs of time/frequency </b>indicate time or frequency of the
+          action in the sentence. They answer the question ‘when/how frequently
+          is the action performed.
+        </p>
+        <p>
+          Always, never, often, eventually, now, frequently, occasionally, once,
+          forever, seldom, before, Sunday, Monday, 10 AM, 12 PM, etc. are common
+          adverbs of time/frequency.
+        </p>
+        <h3>Examples of Adverbs of Time/Frequency (When?)</h3>
+        <ul>
+          <li>
+            I went to school <b><u>a little late yesterday</u></b
+            >.
+          </li>
+          <li>
+            He <b><u>always</u></b> gets a good result.
+          </li>
+          <li>
+            I will leave <b><u>Monday</u></b
+            >.
+          </li>
+          <li>
+            He smokes <b><u>occasionally</u></b
+            >.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-1">
+        <h2>Adverbs of Place/Direction (Where?)</h2>
+        <p>
+          Adverbs of place/direction that indicate place/direction of the action
+          in the sentence. They answer the question ‘ where is the action
+          performed.
+        </p>
+        <p>
+          Across, over, under, in, out, through, backward, there, around, here,
+          sideways, upstairs, in the park, in the field, in that place, etc. are
+          some common adverbs of place/direction.
+        </p>
+        <h3>Examples of Adverbs of Place/Direction (Where?)</h3>
+        <ul>
+          <li>
+            I went <b><u>through the jungle.</u></b>
+          </li>
+          <li>
+            He plays <b><u>in the field</u></b
+            >.
+          </li>
+          <li>
+            Alex is going <b><u>to school</u></b
+            >.
+          </li>
+          <li>
+            He is staying <b><u>at my home</u></b
+            >.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-1">
+        <h2>Adverbs of Degree (How Much?)</h2>
+        <p>
+          Adverbs that express the importance/degree/level of the action in the
+          sentence are called adverbs of degree. They answer the question ‘how
+          much is the action performed.
+        </p>
+        <p>
+          Completely, nearly, entirely, less, mildly, most, thoroughly,
+          somewhat, excessively, much, etc. are common adverbs of degree.
+        </p>
+        <h3>Examples of Adverbs of Degree (How Much?)</h3>
+        <ul>
+          <li>
+            She <b><u>completely</u></b> forgot about her anniversary.
+          </li>
+          <li>
+            I read the newspaper <b><u> thoroughly</u></b
+            >.
+          </li>
+          <li>
+            I am <b><u>so</u></b> excited about the new job.
+          </li>
+          <li>
+            Robin <b><u>hardly</u> </b> studies
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-1">
+        <h2>Adverbs of Manner (How?)</h2>
+        <p>
+          Adverbs that express the manner/approach/process of the action in the
+          sentence are called adverbs of manner. They answer the question ‘how
+          is the action performed.
+        </p>
+        <p>
+          Beautifully, equally, thankfully, carefully, handily, quickly, coldly,
+          hotly, resentfully, earnestly, nicely, tirelessly, etc. are common
+          adverbs of manner. These adverbs usually end in ly.
+        </p>
+        <h3>Examples of Adverbs of Manner (How?)</h3>
+        <ul>
+          <li>Let's divide the prizesb
+              <u> equally</u>.</li>
+          <li>Please, handle the camera <b><u>carefully</u></b>.</li>
+          <li>Mike is walking <b><u>slowly</u></b>.</li>
+          <li>He is running <b><u>fast</u></b></li>
+        </ul>
+      </div>
+    </div>
+  
+        
+  </body>
+</html>

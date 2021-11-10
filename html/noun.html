@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/index.html">
+    <title>Smart bot</title>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      header {
+        background-color: rgb(110, 106, 106);
+        height: 90px;
+        margin: 0px;
+      }
+      .left {
+        display: inline-block;
+        /* border: 2px dotted red;*/
+        position: absolute;
+      }
+      .left img {
+        width: 70px;
+        height: 70px;
+        margin-top: 0px;
+        margin-left: 20px;
+      }
+      .right {
+        position: absolute;
+        right: 60px;
+        top: 30px;
+        display: inline-block;
+        border: 2px dotted rgb(44, 32, 34);
+      }
+     /* .btn{
+        margin-left: 15px;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: blue;
+        border-radius: 13px;
+        transition-property: backgroung-color;
+        transition-duration: 1000ms;
+        animation: shadow-pulse is infinite;
+      }
+      @keyframes{
+        0%{
+
+        }
+      }*/
+      .btn{
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 13px 6px;
+    border-radius: 200px;
+    font-weight: bold;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 20px;
+    margin-left: 200px;
+ }
+ .btn{
+    background: white;
+    color: orange;
+    border: 2px solid transparent;
+ }
+ .pulsate{
+      animation: pulsate 3s ease-in-out;
+      animation-iteration-count: infinite;
+      opacity: .3;
+      color: black;
+
+ }
+      .navigation {
+        display: block;
+        width: 40%;
+        margin: 0px auto;
+        margin-top: 0px;
+        /*  border: 2px double blue;*/
+        overflow: hidden;
+      }
+      .navigation li {
+        margin-top: 20px;
+        list-style-type: none;
+        float: left;
+      }
+      .navigation a {
+        padding: 30px;
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+        font-weight: bolder;
+        text-align: center;
+      }
+      a:hover {
+        background-color: grey;
+        color: black;
+      }
+      .center {
+        display: inline-block;
+        margin-top: 300px;
+        margin-left: 400px;
+        margin-bottom: 185px; /* margin: 300px 400px;9*/
+        color: white;
+        /*background-color: purple;*/
+      }
+      .center p {
+        color: black;
+      }
+      .btn1 {
+        margin-left: 200px;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: blue;
+        border-radius: 13px;
+        transition-property: backgroung-color;
+        transition-duration: 1000ms;
+      }
+     
+
+      .heading {
+        font-size: 50px;
+       /* background-color: yellow;*/
+        text-align: center;
+      }
+      .section-book {
+        width: 100%;
+        height: 650px;
+       /* background-color: pink;*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .box {
+        width: 1050px;
+        height: 450px;
+        margin: 30px;
+        background-color: white;
+      }
+      .box:hover {
+        box-shadow: grey 20px 30px 40px 10px;
+      }
+      #box-1 {
+        padding: 50px;
+        font-size: 25px;
+        background-color: rgb(148, 148, 150);
+      }
+      #box-1 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #box-1 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #box-1 > h4 {
+        padding-top: 50px;
+        text-align: end;
+      }
+      .type {
+        font-size: 25px;
+        width: 100%;
+        height: 100vh;
+        background-color: yellow;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .noun-box:hover {
+        box-shadow: grey 20px 30px 40px 10px;
+      }
+      .noun-box {
+        width: 1120px;
+        height: 726px;
+        margin: 30px;
+        padding: 20px;
+        background-color: white;
+      }
+      #nonu-box-1 {
+        font-size: 25px;
+        background-color: rgb(214, 230, 235);
+      }
+      #noun-box-1 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-1 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-2{
+        font-size: 25px;
+      }
+      #noun-box-2 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-2 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-3 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-3 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-4 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-4 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-5 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-5 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-6 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-6 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-7 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-7 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-4{
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="left">
+        <a href="https://icons8.com/icon/ZYujt38OjL95/studying"
+          ><img src="https://img.icons8.com/color/96/000000/studying.png"
+        /></a>
+      </div>
+
+      <div class="navigation">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Topic </a></li>
+          <li><a href="#">About Us </a></li>
+          <li><a href="#">Contact us </a></li>
+        </ul>
+      </div>
+      <div class="right">
+        <button class="btn pulsate"> Login </button>
+      </div>
+    </header>
+    <!--section is start-->
+    <div class="heading">English grammer</div>
+    <section class="section-book">
+      <div class="box" id="box-1">
+        <h2>Nonu</h2>
+        <p>
+          A noun is a word that names something, such as a person, place, thing,
+          or idea. In a sentence, nouns can play the role of subject, direct
+          object, indirect object, subject complement, object complement,
+          appositive, or adjective.
+        </p>
+        <h3>Type Of Noun</h3>
+        <ol>
+          <li>Common Noun</li>
+          <li>Proper Noun</li>
+          <li>Abstract Nouns</li>
+          <li>Countable & Uncountable Nouns</li>
+          <li>Collective Nouns</li>
+          <li>Compounds Nouns</li>
+          <li>Possessive Nouns</li>
+        </ol>
+      </div>
+    </section>
+    <!-- for nouns type section-->
+    <div class="type">
+      <div class="noun-box" id="noun-box-1">
+        <h2>Common Nouns</h2>
+        <p>
+          Nouns are either common or proper. Common nouns do not refer to a
+          particular person, place, or thing. Common nouns are not capitalized.
+        </p>
+        
+        <h3>Example of Common nouns</h3>
+       
+        <ul>
+          <li>mother</li>
+          <li>father</li>
+          <li>dog</li>
+          <li>cat</li>
+          <li>jacket</li>
+        </ul>
+        </div>
+        </div>
+        <div class="type">
+        <div class="noun-box" id="noun-box-2">
+        <h2>Proper Nouns</h2>
+       
+        <p>
+          In contrast. proper nouns represent specific places, people, and
+          things. You capitalize proper nouns no matter where they appear in a
+          sentence.
+        </p>
+       
+        <h3>Examples of Proper nouns</h3>
+        <ul>
+          <li>Cambridge university</li>
+          <li>New York</li>
+          <li>the Louvre</li>
+          <li>Canada</li>
+          <li>Marvel</li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-3">
+        <h2>Abstract Noun</h2>
+        <p>
+          Abstract nouns are the opposite of concrete nouns. They are nouns that
+          you cannot touch, taste, hear, see, or smell. Abstract nouns refer to
+          concepts, ideas, qualities, and feelings that are not tangible.
+        </p>
+        <p>
+          Sometimes it can be difficult to pick an abstract noun out of a
+          sentence. This happens when a word like love appears in a sentence.
+          Sometimes the word operates as a verb instead of a noun.
+        </p>
+        <h3>Example of Abstract Noun</h3>
+        <ul>
+          <li>
+            <b> Truthfulness</b> is a <b> virtue </b> that is rare nowadays.
+          </li>
+          <li><b> Childhood </b>is the best <b>time </b> to build it.</li>
+          <li>
+            But some <b> virtues </b> receive universal <b> acknowledgment</b>.
+          </li>
+          <li>There are also some commonly acknowledged <b>vices</b>.</li>
+          <li>
+            Different people may have different <b> ideas </b>,
+            <b> opinions </b>, and <b> beliefs </b>.
+          </li>
+          <li>
+            <b> Honesty </b>depends mostly on <b> truthfulness </b> and
+            <b> integrity </b>.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-4">
+        <h2>Countable Noun</h2>
+        <p>
+          The nouns that can be counted are called countable nouns. Countable
+          nouns can take an article: a, an, the.
+        </p>
+        <h2>Non-countable Noun</h2>
+        <p>The nouns that cannot be counted are called non-countable nouns.</p>
+        <p>
+          Abstract nouns and proper nouns are always non-countable nouns, but
+          common nouns and concrete nouns can be both count and non-count nouns.
+        </p>
+        <h3>Example of Countable Noun</h3>
+        <ul>
+          <li>I bought a <b> book </b> of neurology.</li>
+          <li>The book has 269 <b> pages </b>in it.</li>
+          <li>Alex has four <b>pencils </b>.</li>
+          <li>The car contains four <b>seats </b>.</li>
+          <li>Bring me a <b> glass</b> of water.</li>
+        </ul>
+        <h3>Example of Un-countable Noun</h3>
+        <ul>
+          <li>I need some drinking <b> water</b>.</li>
+          <li>We need a lot of <b>money</b> for the <b> business</b>.</li>
+          <li>Do you drink <b> coffee</b> or <b>tea </b>in the morning?</li>
+          <li>How much <b> time </b>do you need?</li>
+          <li>Bring me a cup of <b> soup</b>.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-5">
+        <h2>Collective Nouns</h2>
+        <p>
+          A group of people, animals, and things are collective nouns. Some
+          collective nouns are versatile while others are not. For example,
+          swarm typically describes bees and not lions. However, you could
+          deliberately use the wrong collective noun to promote a specific
+          image.
+        </p>
+        <p>
+          Generally, collective nouns are singular. They are only used in the
+          plural form if they are emphasizing the individual members of a group.
+          To make the plural flow better you can put a phrase like members of in
+          front of the collective term. “The members of congress were sick” may
+          be easier to read than “the congress were sick.”
+        </p>
+        <h3>Example of Collective Nouns</h3>
+        <li>flock</li>
+        <li>group</li>
+        <li>school</li>
+        <li>choir</li>
+        <li>team</li>
+        <li>gang</li>
+        <li>band</li>
+        <li>litter</li>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-6">
+        <h2>Compound Nouns</h2>
+        <p>
+          Two or more words make up a compound noun. Some compound nouns can
+          appear as a single word (closed), a hyphenated phrase, or two separate
+          words (open). There are several different ways to create a compound
+          noun.
+        </p>
+
+        <h3>Example of Compound Nouns</h3>
+        <ul>
+          <li>Noun+ Noun(football)</li>
+          <li>adjective + noun (whiteboard)</li>
+          <li>noun + adjective (handful)</li>
+          <li>verb + noun (dining table)</li>
+          <li>noun + verb (sunrise)</li>
+          <li>verb + preposition (check-out)</li>
+          <li>noun + prepositional phrase (brother-in-law)</li>
+          <li>preposition + noun (overlord)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-7">
+        <h2>Possessive Nouns</h2>
+        <p>
+          Possessive nouns show ownership. A person, place, or thing can have
+          something that belongs to them. Possessive nouns usually form by
+          adding an ‘s to the end of a noun.
+        </p>
+
+        <h3>Example</h3>
+        <ul>
+          <li>The dog‘s toy showed damage.</li>
+          <li>The boy‘s sandwich fell on the ground.</li>
+        </ul>
+        <p>
+          If the noun is plural and ends in s you simply add an apostrophe. If
+          the plural form does not end in s then you add ‘s.
+        </p>
+        <h3>Example</h3>
+        <ul>
+          <li>The girls’ shoes went missing.</li>
+          <li>The dogs’ toys went missing.</li>
+          <li>The women’s shoes went missing.</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

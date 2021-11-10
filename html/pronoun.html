@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart bot</title>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      header {
+        background-color: rgb(110, 106, 106);
+        height: 90px;
+        margin: 0px;
+      }
+      .left {
+        display: inline-block;
+        /* border: 2px dotted red;*/
+        position: absolute;
+      }
+      .left img {
+        width: 70px;
+        height: 70px;
+        margin-top: 0px;
+        margin-left: 20px;
+      }
+      .right {
+        position: absolute;
+        right: 60px;
+        top: 30px;
+        display: inline-block;
+        border: 2px dotted rgb(44, 32, 34);
+      }
+      /* .btn{
+        margin-left: 15px;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: blue;
+        border-radius: 13px;
+        transition-property: backgroung-color;
+        transition-duration: 1000ms;
+        animation: shadow-pulse is infinite;
+      }
+      @keyframes{
+        0%{
+
+        }
+      }*/
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 13px 6px;
+        border-radius: 200px;
+        font-weight: bold;
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+        margin-top: 10px;
+        font-size: 20px;
+        margin-left: 200px;
+      }
+      .btn {
+        background: white;
+        color: orange;
+        border: 2px solid transparent;
+      }
+      .pulsate {
+        animation: pulsate 3s ease-in-out;
+        animation-iteration-count: infinite;
+        opacity: 0.3;
+        color: black;
+      }
+      .navigation {
+        display: block;
+        width: 40%;
+        margin: 0px auto;
+        margin-top: 0px;
+        /*  border: 2px double blue;*/
+        overflow: hidden;
+      }
+      .navigation li {
+        margin-top: 20px;
+        list-style-type: none;
+        float: left;
+      }
+      .navigation a {
+        padding: 30px;
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+        font-weight: bolder;
+        text-align: center;
+      }
+      a:hover {
+        background-color: grey;
+        color: black;
+      }
+      .center {
+        display: inline-block;
+        margin-top: 300px;
+        margin-left: 400px;
+        margin-bottom: 185px; /* margin: 300px 400px;9*/
+        color: white;
+        /*background-color: purple;*/
+      }
+      .center p {
+        color: black;
+      }
+      .btn1 {
+        margin-left: 200px;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: blue;
+        border-radius: 13px;
+        transition-property: backgroung-color;
+        transition-duration: 1000ms;
+      }
+
+      .heading {
+        font-size: 50px;
+        /* background-color: yellow;*/
+        text-align: center;
+      }
+      .section-book {
+        width: 100%;
+        height: 650px;
+        background-color: pink;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .box {
+        width: 1050px;
+        height: 500px;
+        margin: 20px;
+        background-color: white;
+      }
+      .box:hover {
+        box-shadow: grey 20px 30px 40px 10px;
+      }
+      #box-1 {
+        padding: 50px;
+        font-size: 25px;
+        background-color: rgb(214, 230, 235);
+      }
+      #box-1 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #box-1 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #box-1 > h4 {
+        padding-top: 50px;
+        text-align: end;
+      }
+      .type {
+        font-size: 25px;
+        width: 100%;
+        height: 100vh;
+        background-color: yellow;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .noun-box:hover {
+        box-shadow: grey 20px 30px 40px 10px;
+      }
+      .noun-box {
+        width: 1120px;
+        height: 726px;
+        margin: 30px;
+        padding: 20px;
+        background-color: white;
+      }
+      #nonu-box-1 {
+        font-size: 25px;
+        background-color: rgb(214, 230, 235);
+      }
+      #noun-box-1 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-1 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-2 {
+        font-size: 25px;
+      }
+      #noun-box-2 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-2 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-3 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-3 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-4 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-4 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-5 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-5 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-6 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-6 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-7 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-7 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-4 {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="left">
+        <a href="https://icons8.com/icon/ZYujt38OjL95/studying"
+          ><img src="https://img.icons8.com/color/96/000000/studying.png"
+        /></a>
+      </div>
+
+      <div class="navigation">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Topic </a></li>
+          <li><a href="#">About Us </a></li>
+          <li><a href="#">Contact us </a></li>
+        </ul>
+      </div>
+      <div class="right">
+        <button class="btn pulsate">Login</button>
+      </div>
+    </header>
+    <!--section is start-->
+    <div class="heading">English grammer</div>
+    <section class="section-book">
+      <div class="box" id="box-1">
+        <h2>Pronoun</h2>
+        <p>
+          Pronouns make up a small subcategory of nouns. The distinguishing
+          characteristic of pronouns is that they can be substituted for other
+          nouns
+        </p>
+        <h3>Type Of Pronouns</h3>
+        <ol>
+          <li>Personal Pronouns</li>
+          <li>Possessive Pronouns</li>
+          <li>Relative pronouns</li>
+          <li>Reflexive Pronouns</li>
+          <li>Intensive pronouns</li>
+          <li>Indefinite pronouns</li>
+          <li>Demonstrative pronouns</li>
+          <li>Interrogative pronouns</li>
+         
+        </ol>
+      </div>
+    </section>
+    <!-- for nouns type section-->
+    <div class="type">
+      <div class="noun-box" id="noun-box-1">
+        <h2>Personal Pronouns</h2>
+        <p>
+          This type of pronoun is used to refer to a person, in this category
+          you will see words such as I, we, you, they, he, she etc
+        </p>
+        <ul>
+          <li>I have green eyes.</li>
+          <li>They are coming to my house.</li>
+          <li>You are my friend</li>
+        </ul>
+        <h3>Type of personal pronouns</h3>
+        <ul>
+          <li>subject pronouns</li>
+          <li>object pronouns</li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-2">
+        <h2>subject pronouns</h2>
+        <p>
+          When the person or thing is the subject of the sentence, subject
+          pronouns are used.
+        </p>
+        <h3>Example of Subject pronoun</h3>
+        <ul>
+          <li><b> I </b> like to watch TV, but <b> he </b> does not.</li>
+          <li><b>you</b> cannot judge a tree by its bark.</li>
+          <li><b>she</b> struck him on the nose.</li>
+          <li><b>he </b> studies hard to pass the exam.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-3">
+        <h2>Object pronouns</h2>
+        <p>
+          Object pronouns are used when the person or thing is the object of the
+          sentence.
+        </p>
+        <p>Object pronoun list: me, you, him, her, it, us, you, them.</p>
+        <h3>Example of Object pronoun</h3>
+        <ul>
+          <li>Sophia likes <b>me </b> but not <b>him</b>.</li>
+          <li>John will call <b>you</b> soon.</li>
+          <li>Don’t tell <b>her</b> the truth.</li>
+          <li>I helped <b>him</b> pull his boots off.</li>
+          <li>She began to despise <b>him</b>.</li>
+          <li>She was jealous of <b>him</b>.</li>
+          <li>
+            But he always respected <b>her</b> and treated <b>her</b> with
+            honor.
+          </li>
+          <li>The king and Ned could not understand <b>her</b>.</li>
+          <li>She started plotting against <b>them</b>.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-4">
+        <h2>Possessive Pronouns</h2>
+        <p>
+          Possessive pronouns replace the nouns of the possessive adjectives:
+          my, our, your, her, his, their. The possessive pronouns are mine,
+          ours, yours, hers, his, its, theirs. The pronoun ‘who’ also has a
+          possessive form, whose.
+        </p>
+        <ul>
+          <li>The green balls are <b>mine</b>.</li>
+          <li>The yellow balls are <b>yours</b>.</li>
+          <li>The orange balls are <b>hears</b>.</li>
+          <li>The while balls are <b>his</b>.</li>
+          <li>The red bat is <b>theirs</b>.</li>
+          <li>The blue bat is <b>ours</b>.</li>
+          <li>Is this your book? That one is <b>mine</b>.</li>
+          <li>Here is my book. Where’s <b>yours</b> ?</li>
+          <li>I left my bag here and he left <b>his</b> .</li>
+          <li>We got our fruits. What about <b>theirs</b> ?</li>
+          <li>They got their meals. What about <b>ours</b> ?</li>
+          <li>Can I borrow your pen? I lost <b>mine</b> .</li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+        <div class="noun-box" id="noun-box-5">
+            <h2>Relative Pronouns</h2>
+            <p>
+                A relative pronoun is a pronoun that relates to the word that it modifies and is not specific. In English, relative pronouns are who, whom, which, whose, and that. They refer back to people or things previously mentioned, and they are used in relative clauses.
+            </p>
+            <h3>
+              Example of Relative pronouns
+            </h3>
+            <ul>
+              <li>The woman <b>who</b> called yesterday wants to buy the house.  </li>
+              <li>Now they were driving by the houses <b>which</b> Andy had described.</li>
+              <li>She is an artist <b>whose</b> work I really admire.</li>
+              <li>The author <b>whom</b> you criticized in your review has written a letter in reply.</li>
+            </ul>
+        </div>
+      </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-6">
+      <h2>
+        Reflexive Pronoun
+      </h2>
+      <p>The reflexive pronoun will end in -self or -selves and is used in reference to another pronoun. Words within the category are himself, herself, themselves, yourself/ves, myself, itself. </p>
+   
+    <h3> Examples of Reflexive Pronoun </h3>    
+    <ul>
+        <li>I don’t need your help while I can do it <b>myself</b>.</li>
+        <li>I cut <b>myself</b> when I was shaving.</li>
+        <li> She blames <b>herself</b> for that incident.</li>
+        <li>Don’t hurt <b>yourself</b> by playing carelessly.</li>
+        <li>We have enjoyed <b>ourselves</b> .</li>
+        <li>You boys should make it <b>yourselves</b> .</li>
+        <li>  Don’t blame <b>yourself</b> for this.</li>
+        <li>I love <b>myself</b> more than I love anyone else.</li>
+    </ul>
+</div>
+</div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-7">
+        <h2>Intensive Pronouns</h2>
+        <p>The intensive pronoun is used as a reference to another pronoun or noun in the same sentence as a way of emphasizing it.</p>
+        <p>or </p>
+        <p>Intensive pronouns add emphasis/importance but do not act as the object in the sentence. They can appear right after the subject.
+        </p>
+        <h3>Example of Intensive Pronouns</h3>
+        <ol>
+          <li>I will do it <u>myself</u>. (Here, ‘myself’ is not an object)
+          </li>
+          <li>I <u>myself</u> saw the missing boat into the harbor.</li>
+          <li>We intend to do all the work <u>ourselves</u>.</li>
+          <li>You <u>yourselves</u> are responsible for this mess.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-8">
+          <h2>Indefinite pronouns</h2>
+          <p>An indefinite pronoun is a pronoun that refers to non-specific beings, objects, or places. Indefinite Pronouns can also function as other parts of speech too, depending on context.</p>
+            <h3>Example of Indefinite pronouns</h3>
+            <ol>
+            <li>I don’t want <u>anyone</u> to see it.</li>
+            <li>
+              Is there <u> anything </u> in that box?
+            </li>
+            <li>You can’t blame him for <u> everything</u>.</li>
+            <li>
+              <u>Each</u> company is fighting to protect its own commercial interests.
+            </li>
+          
+          <li><u>Much</u> has happened since we met.</li>
+          <li><u>No one</u> can cope with her in English.</li></ol>
+
+        </div></div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-9">
+        <h2>Demonstrative pronouns</h2>
+        <p>
+          Demonstrative pronouns normally indicate the closeness of or distance from the speaker, either literally or symbolically.  This, these, that, and those are the demonstrative pronouns. They also work as demonstrative adjectives when they modify a noun. However, demonstrative pronouns do not modify anything rather replace the nouns/noun phrases.
+        </p>
+        <h3>
+          Example of Demonstrative pronouns
+        </h3>
+        <ol>
+          <li><u>That</u> is a long way to go. (demonstrative pronoun)</li>
+          <li><u>This </u> is my car. (demonstrative pronoun)</li>
+          <li>Hand me <u>that</u> cricket bat. (demonstrative adjective)</li>
+          <li><u>Neither</u> is permitted to enter the building.</li>
+          <li><u>Such</u> are ways of life.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-10">
+        <h2>Interrogative pronouns</h2>
+        <p>An interrogative pronoun is used in a question, the words within the category are who, which, where, how and what.</p>
+        <p>Who, whom, and whose refer to questions related to a person or animal; what refers to an idea, object, or event; and which can indicate either a person/s or a thing/s.</p>
+        <h3>Examples of  Interrogative pronouns</h3>
+            <ol>
+              <li>What was the name of your dog?</li>
+              <li>Which is your favorite movie?</li>
+              <li>Who works for you?</li>
+              <li>Whom do you prefer in this competition?</li>
+              <li>There’s a new bike on the lawn. Whose is it?</li>
+            </ol>
+        </div>
+        </div>
+      
+  </body>
+</html>

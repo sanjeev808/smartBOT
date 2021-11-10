@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart bot</title>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      header {
+        background-color: rgb(110, 106, 106);
+        height: 90px;
+        margin: 0px;
+      }
+      .left {
+        display: inline-block;
+        /* border: 2px dotted red;*/
+        position: absolute;
+      }
+      .left img {
+        width: 70px;
+        height: 70px;
+        margin-top: 0px;
+        margin-left: 20px;
+      }
+      .right {
+        position: absolute;
+        right: 60px;
+        top: 30px;
+        display: inline-block;
+        border: 2px dotted rgb(44, 32, 34);
+      }
+      /* .btn{
+        margin-left: 15px;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: blue;
+        border-radius: 13px;
+        transition-property: backgroung-color;
+        transition-duration: 1000ms;
+        animation: shadow-pulse is infinite;
+      }
+      @keyframes{
+        0%{
+
+        }
+      }*/
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 13px 6px;
+        border-radius: 200px;
+        font-weight: bold;
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+        margin-top: 10px;
+        font-size: 20px;
+        margin-left: 200px;
+      }
+      .btn {
+        background: white;
+        color: orange;
+        border: 2px solid transparent;
+      }
+      .pulsate {
+        animation: pulsate 3s ease-in-out;
+        animation-iteration-count: infinite;
+        opacity: 0.3;
+        color: black;
+      }
+      .navigation {
+        display: block;
+        width: 40%;
+        margin: 0px auto;
+        margin-top: 0px;
+        /*  border: 2px double blue;*/
+        overflow: hidden;
+      }
+      .navigation li {
+        margin-top: 20px;
+        list-style-type: none;
+        float: left;
+      }
+      .navigation a {
+        padding: 30px;
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+        font-weight: bolder;
+        text-align: center;
+      }
+      a:hover {
+        background-color: grey;
+        color: black;
+      }
+      .center {
+        display: inline-block;
+        margin-top: 300px;
+        margin-left: 400px;
+        margin-bottom: 185px; /* margin: 300px 400px;9*/
+        color: white;
+        /*background-color: purple;*/
+      }
+      .center p {
+        color: black;
+      }
+      .btn1 {
+        margin-left: 200px;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: blue;
+        border-radius: 13px;
+        transition-property: backgroung-color;
+        transition-duration: 1000ms;
+      }
+
+      .heading {
+        font-size: 50px;
+        /* background-color: yellow;*/
+        text-align: center;
+      }
+      .section-book {
+        width: 100%;
+        height: 650px;
+       /* background-color: pink;*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .box {
+        width: 1050px;
+        height: 500px;
+        margin: 20px;
+        background-color: white;
+      }
+      .box:hover {
+        
+        box-shadow: grey 20px 30px 40px 10px;
+      }
+      #box-1 {
+        padding: 50px;
+        font-size: 25px;
+        background-color: rgb(148, 148, 150);
+      }
+      #box-1:hover{
+        background-color: lightgray;
+      }
+      #box-1 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #box-1 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #box-1 > h4 {
+        padding-top: 50px;
+        text-align: end;
+      }
+      .type {
+        font-size: 25px;
+        width: 100%;
+        height: 100vh;
+        /*background-color: yellow;*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .noun-box:hover {
+        box-shadow: grey 20px 30px 40px 10px;
+      }
+      .noun-box {
+        width: 1120px;
+        height: 726px;
+        margin: 30px;
+        padding: 20px;
+        background-color: rgb(148, 148, 150);
+      }
+      .noun-box:hover{
+        background-color: lightgray;
+
+      }
+      #nonu-box-1 {
+        font-size: 25px;
+        background-color: rgb(214, 230, 235);
+      }
+      #noun-box-1 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-1 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-2 {
+        font-size: 25px;
+      }
+      #noun-box-2 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-2 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-3 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-3 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-4 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-4 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-5 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-5 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-6 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-6 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-7 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-7 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-4 {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="left">
+        <a href="https://icons8.com/icon/ZYujt38OjL95/studying"
+          ><img src="https://img.icons8.com/color/96/000000/studying.png"
+        /></a>
+      </div>
+
+      <div class="navigation">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Topic </a></li>
+          <li><a href="#">About Us </a></li>
+          <li><a href="#">Contact us </a></li>
+        </ul>
+      </div>
+      <div class="right">
+        <button class="btn pulsate">Login</button>
+      </div>
+    </header>
+    <!--section is start-->
+    <div class="heading">English grammer</div>
+    <section class="section-book">
+      <div class="box" id="box-1">
+        <h2>Article</h2>
+        <p>
+          There is no doubt that articles are adjectives since they modify the
+          nouns after them. But articles have some special significance as
+          determiners. Articles determine the standard of nouns
+        </p>
+
+        <h3>Type Of Articles</h3>
+        <ol>
+          <li>Definite Articles--> the</li>
+          <li>indefinite Articles --> a & an</li>
+        </ol> 
+      </div>
+    </section>
+    <!-- for nouns type section-->
+    <div class="type">
+      <div class="noun-box" id="noun-box-1">
+        <h2>Indefinite Articles</h2>
+       <h4> <u><b>Rule 1</b></u></h4>
+       <p>A common noun in the singular number always requires an article before it. But a plural common noun does not require an article always. A plural common noun can have the article ‘the’ if we want to particularise that noun.</p>
+      
+       <ul>
+           <li>I saw <b><u>a</u></b> snake. (Refers to a random snake)
+            
+           </li>
+           <li>I saw snakes in <b><u>a</u></b> zoo. (No article is required)</li>
+           
+       </ul>
+       <h4><b><u>Rule 2</u></b></h4>
+       <p>The choice between the two indefinite articles – a & an – is determined by sound. Words beginning with consonant sounds precede ‘a’ and words beginning with vowel sounds precede ‘an’. There are some special cases also.</p>
+       <ul>
+           <li>a university, a union, a useful book, etc.
+          </li>
+           <li>  a one-dollar note, a one-man army, etc.</li>
+           <li>an MA, a BA, an LLB, a BSC, etc.</li>
+       </ul>
+      </div>
+    </div>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-6">
+      <b><u>Rule 3 </u></b>
+       <p>A or an - sometimes makes a Proper Noun a Common Noun. Proper nouns generally do not take any articles, but when a proper noun needs to be used as a common noun, you must bring a or an - for it.  </p>
+       <ul>
+         <li>He thinks he is a Shakespeare. (Here, ‘Shakespeare’ does not refer to the actual person but someone like him.)</li>
+         <li>He seems to be an Australian. (‘Australia’ is a proper noun but ‘Australian’ is a common noun because there is only one Australia but a million of Australians.)</li>
+       </ul>
+       <b><u>Rule 4 </u></b>
+       <p>Sometimes indefinite articles are used to refer the number ‘one’/’each’/’per’.</p>
+       <ul>
+         <li>I earned a thousand dollar in that job. (One thousand dollar)
+          
+        </li>
+         <li>I have a car. (One car)</li>
+         <li>  It goes 50 miles an hour. (Per Hour)</li>
+       </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-7">
+        <b><u>Rule 5 </u></b>
+        <p>
+          Indefinite articles often precede descriptive adjectives.
+        </p>
+        <ul>
+          <li>He is a good boy.</li>
+          <li>What a nice car!</li>
+        </ul>
+        <b><u>Rule 6</u></b>
+        <p>‘A’ sometimes comes before determiners, for example,  a few, a little, a lot of, a most, etc. but in the case of many, a or an - comes after.</p>
+        <ul><li>I have a few friends coming over.</li>
+        <li>There is a little milk in the jar.</li>
+        <li>Many a fan welcomed</li></ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-7">
+        <h2>Definite Article</h2>
+        <b><u>Rule 1 </u></b>
+        <p>
+          ‘The’ is used to indicate a particular person(s) or thing(s) in the case of common nouns. Proper nouns generally do not take an article.
+        </p>
+        <ul><li>The man is running. (A particular man)
+          </li>
+        <li>I saw the boy stealing.</li>
+        <li>Where is the pen I gave you last year?</li></ul>
+        <b><u>Rule 2 </u></b>
+      <p>
+        Sometimes ‘the’ is used to generalize a group/whole class.
+      </p>
+      <ul>
+        <li>The dog is a faithful animal. (Refers to the whole species of dog.)</li>
+        <li>The English are industrious. (Refers to the people of England as a nation)</li>
+        <li>The honest are respected. (The+adjectives = plural noun)</li>
+      </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-7">
+      
+        <b><u>Rule 3 </u></b>
+       <p>To particularise a non-count noun ‘the’ is required before it.</p>
+       <ul>
+         <li>The water of the Arctic ocean is freezing.</li>
+         <li>Please return the money I lent you last year.</li>
+       </ul>
+       <b><u>Rule 4 </u></b>
+       <p>‘The’ is mandatory before a thing which is only one of a kind in the universe.</p>
+       <ul><li>The moon is shining tonight.
+      </li>
+       <li>  The earth is moving around the sun.</li></ul>
+      </div>
+    </div>
+  
+  </body>
+</html>

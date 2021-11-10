@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart bot</title>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      header {
+        background-color: rgb(110, 106, 106);
+        height: 90px;
+        margin: 0px;
+      }
+      .left {
+        display: inline-block;
+        /* border: 2px dotted red;*/
+        position: absolute;
+      }
+      .left img {
+        width: 70px;
+        height: 70px;
+        margin-top: 0px;
+        margin-left: 20px;
+      }
+      .right {
+        position: absolute;
+        right: 60px;
+        top: 30px;
+        display: inline-block;
+        border: 2px dotted rgb(44, 32, 34);
+      }
+      /* .btn{
+        margin-left: 15px;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: blue;
+        border-radius: 13px;
+        transition-property: backgroung-color;
+        transition-duration: 1000ms;
+        animation: shadow-pulse is infinite;
+      }
+      @keyframes{
+        0%{
+
+        }
+      }*/
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 13px 6px;
+        border-radius: 200px;
+        font-weight: bold;
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+        margin-top: 10px;
+        font-size: 20px;
+        margin-left: 200px;
+      }
+      .btn {
+        background: white;
+        color: orange;
+        border: 2px solid transparent;
+      }
+      .pulsate {
+        animation: pulsate 3s ease-in-out;
+        animation-iteration-count: infinite;
+        opacity: 0.3;
+        color: black;
+      }
+      .navigation {
+        display: block;
+        width: 40%;
+        margin: 0px auto;
+        margin-top: 0px;
+        /*  border: 2px double blue;*/
+        overflow: hidden;
+      }
+      .navigation li {
+        margin-top: 20px;
+        list-style-type: none;
+        float: left;
+      }
+      .navigation a {
+        padding: 30px;
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+        font-weight: bolder;
+        text-align: center;
+      }
+      a:hover {
+        background-color: grey;
+        color: black;
+      }
+      .center {
+        display: inline-block;
+        margin-top: 300px;
+        margin-left: 400px;
+        margin-bottom: 185px; /* margin: 300px 400px;9*/
+        color: white;
+        /*background-color: purple;*/
+      }
+      .center p {
+        color: black;
+      }
+      .btn1 {
+        margin-left: 200px;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: blue;
+        border-radius: 13px;
+        transition-property: backgroung-color;
+        transition-duration: 1000ms;
+      }
+
+      .heading {
+        font-size: 50px;
+        /* background-color: yellow;*/
+        text-align: center;
+      }
+      .section-book {
+        width: 100%;
+        height: 650px;
+        background-color: pink;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .box {
+        width: 1050px;
+        height: 500px;
+        margin: 20px;
+        background-color: white;
+      }
+      .box:hover {
+        box-shadow: grey 20px 30px 40px 10px;
+      }
+      #box-1 {
+        padding: 50px;
+        font-size: 25px;
+        background-color: rgb(214, 230, 235);
+      }
+      #box-1 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #box-1 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #box-1 > h4 {
+        padding-top: 50px;
+        text-align: end;
+      }
+      .type {
+        font-size: 25px;
+        width: 100%;
+        height: 100vh;
+        background-color: yellow;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .noun-box:hover {
+        box-shadow: grey 20px 30px 40px 10px;
+      }
+      .noun-box {
+        width: 1120px;
+        height: 726px;
+        margin: 30px;
+        padding: 20px;
+        background-color: white;
+      }
+      #nonu-box-1 {
+        font-size: 25px;
+        background-color: rgb(214, 230, 235);
+      }
+      #noun-box-1 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-1 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-2 {
+        font-size: 25px;
+      }
+      #noun-box-2 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-2 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-3 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-3 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-4 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-4 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-5 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-5 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-6 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-6 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-7 > h2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-7 > h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #noun-box-4 {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="left">
+        <a href="https://icons8.com/icon/ZYujt38OjL95/studying"
+          ><img src="https://img.icons8.com/color/96/000000/studying.png"
+        /></a>
+      </div>
+
+      <div class="navigation">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Topic </a></li>
+          <li><a href="#">About Us </a></li>
+          <li><a href="#">Contact us </a></li>
+        </ul>
+      </div>
+      <div class="right">
+        <button class="btn pulsate">Login</button>
+      </div>
+    </header>
+    <!--section is start-->
+    <div class="heading">English grammer</div>
+    <section class="section-book">
+      <div class="box" id="box-1">
+        <h2>Adjective</h2>
+        <p>
+          An adjective describes or modifies noun/s and pronoun/s in a sentence.
+          It normally indicates quality, size, shape, duration, feelings,
+          contents, and more about a noun or pronoun.
+        </p>
+        <h3>Type Of Adjective</h3>
+        <ol>
+          <li>Descriptive Adjectives</li>
+          <li>Quantitative Adjectives</li>
+          <li>Proper Adjectives</li>
+          <li>Demonstrative Adjectives</li>
+          <li>Possessive Adjectives</li>
+          <li>Interrogative Adjectives</li>
+          <li>Indefinite Adjectives</li>
+          <li>Compound Adjectives</li>
+        </ol>
+      </div>
+    </section>
+    <!-- for nouns type section-->
+    <div class="type">
+      <div class="noun-box" id="noun-box-1">
+        <h2>Descriptive Adjectives</h2>
+        <p>
+          The most commonly thought of adjectives are descriptive. They help
+          make our writing more clear and precise. Descriptive adjectives
+          accomplish this task by modifying a pronoun or noun with an attribute.
+          Hence, this type of adjective will come before a noun or pronoun.
+        </p>
+
+        <h3>Examples of Descriptive Adjectives</h3>
+        <ul>
+          <li>
+            I have a <u>fast</u>
+            car. (The word ‘fast’ is describing an attribute of the car)
+          </li>
+          <li>
+            I am <u>hungry</u>. (The word ‘hungry’ is providing information
+            about the subject)
+          </li>
+          <li>The <u>hungry</u> cats are crying.</li>
+          <li>I saw a <u>flying</u> Eagle.</li>
+          <li>I have an <u> old touring</u> car.</li>
+          <li>He bought an <u> expensive old silver</u> mirror</li>
+          <li>Give me that <u>big brown </u> pad.</li>
+          <li>He plays with an <u> enormous</u> bat.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-2">
+        <h2>Quantitative Adjectives</h2>
+        <p>
+          A quantitative adjective provides information about the quantity of
+          the nouns/pronouns. This type belongs to the question category of ‘how
+          much’ and ‘how many’.
+        </p>
+        <h3>Examples of Quantitative Adjectives</h3>
+        <ul>
+          <li>I have been standing here for <b>three </b> hours.</li>
+          <li><b>Four</b> girls were expelled from the school.</li>
+          <li>The <b> first</b> boy failed in the last exam.</li>
+          <li>Not a <b>single</b> boy is in the classroom.</li>
+          <li>The <b>Second</b> World War still haunts some people.</li>
+          <li>There are <b>50</b> boys and <b>26</b> girls on this tour.</li>
+          <li>The forest has <b>2120</b> animals.</li>
+          <li>The <b>fourth</b> boy became first in the final exam.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-3">
+        <h2>Proper Adjectives</h2>
+        <p>
+          Proper adjectives are the adjective form of proper nouns. When proper
+          nouns modify or describe other nouns/pronouns, they become proper
+          adjectives. ‘Proper’ means ‘specific’ rather than ‘formal’ or
+          ‘polite.’
+        </p>
+        <p>
+          A proper adjective allows us to summarize a concept in just one word.
+          Instead of writing/saying ‘a food cooked in Chinese recipe’ you can
+          write/say ‘Chinese food’.
+        </p>
+        <h3>Examples of Proper Adjectives</h3>
+        <ul>
+          <li>Alex is an <b>Australian</b> player.</li>
+          <li>Robin is an <b>Indian</b> player.</li>
+          <li>Sushi is an <b>Asian</b> player.</li>
+          <li>I love <b>Chinese </b> food.</li>
+          <li>My brother likes <b>Italian</b> cuisine.</li>
+          <li><b>Shakespearean</b> sonnets are easy to comprehend.</li>
+          <li><b>Petrarchan</b> sonnets are more complex.</li>
+          <li>He has always been a <b>Marxist</b> .</li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-4">
+        <h2>Demonstrative Adjectives</h2>
+        <p>
+          A demonstrative adjective directly refers to something or someone.
+          Demonstrative adjectives include the words: this, that, these, those.
+        </p>
+        <p>
+          A demonstrative pronoun works alone and does not precede a noun, but a
+          demonstrative adjective always comes before the word it modifies.
+        </p>
+        <h3>Example of Demonstrative Adjectives</h3>
+        <ul>
+          <li>Give me <b>that</b> blue water bottle.</li>
+          <li><b>this </b> time I won’t fail you.</li>
+          <li>I want <b>those</b> gorgeous marbles.</li>
+          <li>I wanted to propose you <b>that</b> day.</li>
+          <li><b>these</b> mangoes are rotting.</li>
+          <li>I can’t forget <b>that</b> incident.</li>
+          <li><b>those</b> people were mean to her.</li>
+          <li>I cannot give you money at <b>this</b> moment.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-5">
+        <h2>Possessive Adjectives</h2>
+        <p>
+          A possessive adjective indicates possession or ownership. It suggests
+          the belongingness of something to someone/something.
+        </p>
+        <p>
+          Some of the most used possessive adjectives are my, his, her, our,
+          their, your.
+        </p>
+        <p>
+          All these adjectives always come before a noun. Unlike possessive
+          pronouns, these words demand a noun after them.
+        </p>
+        <h3>Example of Possessive Adjectives</h3>
+        <ul>
+          <li>
+            <b>My</b> computer is not working as fast as it worked in the
+            beginning.
+          </li>
+          <li><b>Our</b> father told us not to quarrel with anyone.</li>
+          <li><b>Your</b> cycle has been stolen yesterday.</li>
+          <li><b>Your</b> child is not doing well in the school.</li>
+          <li>We are concerned about <b>his</b> performance.</li>
+          <li>
+            The students of class seven submitted <b>their</b> assignment.
+          </li>
+          <li>I could not understand <b>her</b> intentions.</li>
+          <li><b>Her</b> thoughts are too complex.</li>
+          <li><b>My</b> mind stops working when I think about that.</li>
+          <li>Stop messing with <b>my</b> hair.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-6">
+        <h2>Interrogative Adjectives</h2>
+        <p>
+          An interrogative adjective asks a question. An interrogative adjective
+          must be followed by a noun or a pronoun. The interrogative adjectives
+          are: which, what, whose. These words will not be considered as
+          adjectives if a noun does not follow right after them. ‘Whose’ also
+          belongs to the possessive adjective type.
+        </p>
+        <h3>Example of Interrogative Adjectives</h3>
+        <ul>
+          <li><b>Whose</b> book was that?</li>
+          <li><b>Which</b> pen do you like more?</li>
+          <li><b>What</b> books are you buying today?</li>
+          <li><b>Which</b> book on proofreading do you recommend?</li>
+          <li><b>Which</b> team scored the higher in the last match?</li>
+          <li><b>Which</b> player did get a fifty yesterday?</li>
+          <li><b>What</b> recipe did you choose to make this dish?</li>
+          <li><b>Which</b> bat is Watson’s?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-7">
+
+        <h2>
+            Indefinite Adjective
+        </h2>
+        <p>
+            An indefinite adjective describes or modifies a noun unspecifically. They provide indefinite/unspecific information about the noun. The common indefinite adjectives are few, many, much, most, all, any, each, every, either, nobody, several, some, etc.  
+        </p>
+        <h3>Examples of Indefinite Adjective</h3>
+        <ul>
+            <li>I gave <u>some</u> candy to her.</li>
+            <li>I want a <u>few</u> moments alone.</li>
+            <li><u>Several </u> writers wrote about the recent incidents.</li>
+            <li><u>Each</u> student will have to submit homework tomorrow.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-8">
+          <h2>
+            Compound Adjectives
+          </h2>
+          <p>
+            When compound nouns/combined words modify other nouns, they become a compound adjective. This type of adjective usually combines more than one word into a single lexical unit and modifies a noun. They are often separated by a hyphen or joined together by a quotation mark.  
+          </p>
+          <h3>Examples of Compound Adjectives</h3>
+          <ul>
+              <li>
+                I have a <u>broken-down</u> sofa.
+              </li>
+              <li>I saw a <u>six-foot-long</u> snake.</li>
+              <li>He gave me an <u>“I’m gonna kill you now”</u> look.
+            </li>
+          </ul>
+      </div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-9"></div>
+    </div>
+    <div class="type">
+      <div class="noun-box" id="noun-box-10"></div>
+    </div>
+  </body>
+</html>
